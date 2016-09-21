@@ -1,0 +1,100 @@
+Private Sub CommandButton1_Click()
+
+Dim SheetNames As String
+
+If CPJOB1.Value = True Then SheetNames = "Invoice" & "," & "Timesheet 1"
+
+If CPJOB2.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 2"
+ElseIf CPJOB2.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 2"
+End If
+
+If CPJOB3.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 3"
+ElseIf CPJOB3.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 3"
+End If
+
+If CPJOB4.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 4"
+ElseIf CPJOB4.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 4"
+End If
+
+If CPJOB5.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 5"
+ElseIf CPJOB5.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 5"
+End If
+
+If CPJOB6.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 6"
+ElseIf CPJOB6.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 6"
+End If
+
+If CPJOB7.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 7"
+ElseIf CPJOB7.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 7"
+End If
+
+If CPJOB8.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 8"
+ElseIf CPJOB8.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 8"
+End If
+
+If CPJOB9.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 9"
+ElseIf CPJOB9.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 9"
+End If
+
+If CPJOB10.Value = True And SheetNames <> "" Then
+SheetNames = SheetNames & "," & "Timesheet 10"
+ElseIf CPJOB10.Value = True And SheetNames = "" Then
+    SheetNames = "Timesheet 10"
+End If
+
+
+Sheets("Invoice").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 1").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 2").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 3").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 4").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 5").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 6").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 7").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 8").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 9").Activate
+ActiveSheet.UsedRange.Select
+Sheets("Timesheet 10").Activate
+ActiveSheet.UsedRange.Select
+
+Sheets(Split(SheetNames, ",")).Select
+   Selection.ExportAsFixedFormat Type:=xlTypePDF, Filename:= _
+      "C:\Users\craig\Desktop\Test\pdfmaker.pdf", Quality:=xlQualityStandard, _
+      IncludeDocProperties:=True, IgnorePrintAreas:=False, OpenAfterPublish:= _
+      True
+
+
+
+
+
+
+
+
+
+
+End Sub
